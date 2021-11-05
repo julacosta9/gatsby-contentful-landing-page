@@ -7,8 +7,14 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       colors: {
-        bracketsBlue: "#2885F6",
-        bracketsGray: "#767D84",
+        bracketsBlue: {
+          DEFAULT: "#2885F6",
+          dark: "#1A66C4",
+        },
+        bracketsGray: {
+          DEFAULT: "#767D84",
+          dark: "#464B4F",
+        },
         bracketsOrange: "#F65928",
       },
       screens: {
@@ -19,6 +25,7 @@ module.exports = {
   variants: {
     extend: {
       translate: ["group-hover"],
+      scale: ["group-hover"],
     },
   },
   plugins: [],
