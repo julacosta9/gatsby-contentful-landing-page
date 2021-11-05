@@ -1,10 +1,13 @@
 import React from "react";
 import Layout from "../components/layout/Layout";
+import LandingPageHeroBackground from "../components/sections/LandingPageHeroBackground";
+import Hero from "../components/sections/Hero";
 
 const IndexPage = () => {
   return (
     <Layout>
-      <h1>Landing Page</h1>
+      <LandingPageHeroBackground />
+      <Hero />
     </Layout>
   );
 };
