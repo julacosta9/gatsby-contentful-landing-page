@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XCircleIcon } from "@heroicons/react/solid";
+import arrow from "../../images/arrow.svg";
 
 const MobileMenu = ({ data }) => {
   return (
@@ -28,34 +29,37 @@ const MobileMenu = ({ data }) => {
               <Popover.Panel className="absolute z-10 w-screen max-w-xs px-2 mt-3 right-0 sm:px-0 lg:max-w-3xl">
                 <nav className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black ring-opacity-5">
                   <div className="relative grid gap-8 bg-white p-7 lg:grid-cols-2">
-                    {data.contentfulMainNavigation.navigationLinks.map(
-                      (link) => (
-                        <Link
-                          key={link.text}
-                          to={link.url}
-                          className="flex items-center px-2 py-1 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100"
-                        >
-                          <div className="">
-                            <p className="text-sm font-bold text-gray-900">
-                              {link.text}
-                            </p>
-                            <p className="text-sm text-gray-500">
-                              {link.description}
-                            </p>
-                          </div>
-                        </Link>
-                      )
-                    )}
+                    {data.navigationLinks.map((link) => (
+                      <Link
+                        key={link.text}
+                        to={link.url}
+                        className="flex items-center px-2 py-1 -m-3 transition duration-150 ease-in-out rounded-lg hover:bg-gray-100"
+                      >
+                        <div className="">
+                          <p className="text-sm font-bold text-gray-900">
+                            {link.text}
+                          </p>
+                          <p className="text-sm text-gray-500">
+                            {link.description}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
-                  <div className="p-4 transition bg-bracketsBlue hover:bg-bracketsBlue-dark">
+                  <div className="p-4 transition bg-bracketsBlue hover:bg-bracketsBlue-dark group">
                     <Link
-                      to={data.contentfulMainNavigation.ctaUrl}
+                      to={data.ctaUrl}
                       className="flow-root px-2 py-1 transition duration-150 ease-in-out rounded-md"
                     >
                       <span className="flex items-center">
                         <span className="text-base font-bold text-white">
-                          {data.contentfulMainNavigation.ctaText}
+                          {data.ctaText}
                         </span>
+                        <img
+                          className="h-3 w-3 ml-2 transform transition group-hover:translate-x-0.5"
+                          src={arrow}
+                          alt=""
+                        />
                       </span>
                     </Link>
                   </div>
