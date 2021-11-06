@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
+import MobileMenu from "./MobileMenu";
 import CtaButton from "../ui/CtaButton";
 
 const Header = () => {
@@ -17,6 +18,7 @@ const Header = () => {
         navigationLinks {
           text
           url
+          description
         }
         ctaText
         ctaUrl
@@ -35,7 +37,7 @@ const Header = () => {
                 alt={data.contentfulMainNavigation.logo.description}
               />
             </Link>
-            <nav className="flex gap-8 items-center">
+            <nav className="hidden md:flex gap-8 items-center">
               {data.contentfulMainNavigation.navigationLinks.map(
                 (link, index) => (
                   <Link
@@ -52,6 +54,7 @@ const Header = () => {
                 url={data.contentfulMainNavigation.ctaUrl}
               />
             </nav>
+            <MobileMenu data={data} />
           </div>
         </div>
       </div>
