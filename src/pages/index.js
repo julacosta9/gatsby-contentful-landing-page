@@ -1,14 +1,17 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
-import Layout from "../components/layout/Layout";
+import Layout from "../components/layouts/Layout";
+import Head from "../components/sections/Head";
 import LandingPageHeroBackground from "../components/sections/LandingPageHeroBackground";
 import Hero from "../components/sections/Hero";
-import Tile from "../components/sections/Tile";
+import ThreeTilesAcross from "../components/sections/ThreeTilesAcross";
 
-const IndexPage = () => {
+const Home = () => {
   const data = useStaticQuery(graphql`
     query {
       allContentfulTile(
+        sort: { fields: order }
         filter: {
           contentful_id: {
             in: [
@@ -42,24 +45,12 @@ const IndexPage = () => {
 
   return (
     <Layout>
+      <Head title="Home" />
       <LandingPageHeroBackground />
       <Hero />
-      <section className="max-w-screen-content w-full mx-auto">
-        <div className="flex flex-col lg:flex-row gap-24 lg:gap-8 lg:gap-y-12 text-white py-20">
-          {data.allContentfulTile.edges.map((edge) => (
-            <Tile
-              title={edge.node.title}
-              description={edge.node.description}
-              ctaText={edge.node.ctaText}
-              ctaUrl={edge.node.ctaUrl}
-              img={edge.node.image.file.url}
-              imgAlt={edge.node.image.description}
-            />
-          ))}
-        </div>
-      </section>
+      <ThreeTilesAcross data={data} />
     </Layout>
   );
 };
 
-export default IndexPage;
+export default Home;
