@@ -1,5 +1,11 @@
 .bg {
-  background-position: top 0 right 10%;
+  background-position: top 0 right 20%;
+}
+
+@media (min-width: 1024px) {
+  .bg {
+    background-position: top 0 right 10%;
+  }
 }
 
 .gradient1 {
