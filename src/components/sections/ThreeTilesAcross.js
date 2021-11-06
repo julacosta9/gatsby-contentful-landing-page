@@ -13,6 +13,7 @@ const ThreeTilesAcross = ({ data }) => {
             ctaUrl={tile.ctaUrl}
             img={tile.image.file.url}
             imgAlt={tile.image.description}
+            key={tile.title}
           />
         ))}
       </div>
