@@ -9,30 +9,59 @@ import ThreeTilesAcross from "../components/sections/ThreeTilesAcross";
 const Home = () => {
   const data = useStaticQuery(graphql`
     query {
-      allContentfulTile(
-        sort: { fields: order }
-        filter: {
-          contentful_id: {
-            in: [
-              "1qu57uKR2TbvpDfCPEFwAO"
-              "5CIdAm3a8KyHtYK5N3Lg56"
-              "CC9a9xgLbpb5L4zmQJ4Sm"
-            ]
-          }
-          node_locale: { eq: "en-US" }
-        }
+      allContentfulLandingPage(
+        filter: { node_locale: { eq: "en-US" }, pageTitle: { eq: "Brackets" } }
       ) {
         edges {
           node {
-            title
-            description
-            ctaText
-            ctaUrl
-            image {
+            pageTitle
+            metaDescription
+            mainNavigation {
+              logo {
+                ... on ContentfulAsset {
+                  description
+                  file {
+                    url
+                  }
+                }
+              }
+              navigationLinks {
+                text
+                url
+                description
+              }
+              ctaText
+              ctaUrl
+            }
+            heroSection {
+              tagline
+              header
+              subheader
+              primaryCtaText
+              primaryCtaUrl
+              secondaryCtaText
+              secondaryTextUrl
+            }
+            heroImage {
+              image {
+                ... on ContentfulAsset {
+                  file {
+                    url
+                  }
+                }
+              }
+            }
+            tiles {
+              title
               description
-              ... on ContentfulAsset {
-                file {
-                  url
+              ctaText
+              ctaUrl
+              image {
+                ... on ContentfulAsset {
+                  description
+                  file {
+                    url
+                  }
                 }
               }
             }
@@ -42,15 +71,21 @@ const Home = () => {
     }
   `);
 
+  const {
+    pageTitle,
+    metaDescription,
+    mainNavigation,
+    heroSection,
+    heroImage,
+    tiles,
+  } = data.allContentfulLandingPage.edges[0].node;
+
   return (
-    <Layout>
-      <Head
-        title="Home"
-        metaDescription="This mock landing page built with Gatsby and Contenful. Almost everything on this page can be edited in Contentful"
-      />
-      <LandingPageHeroBackground />
-      <Hero />
-      <ThreeTilesAcross data={data} />
+    <Layout mainNavigationData={mainNavigation}>
+      <Head title={pageTitle} metaDescription={metaDescription} />
+      <LandingPageHeroBackground data={heroImage} />
+      <Hero data={heroSection} />
+      <ThreeTilesAcross data={tiles} />
     </Layout>
   );
 };
