@@ -10,7 +10,7 @@
   "scripts": {
     "develop": "env-cmd -f .env gatsby develop",
     "start": "gatsby develop",
-    "build": "gatsby build",
+    "build": "env-cmd -f .env gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
@@ -18,7 +18,9 @@
     "@headlessui/react": "^1.4.1",
     "@heroicons/react": "^1.0.5",
     "gatsby": "^4.1.0",
+    "gatsby-plugin-image": "^2.1.0",
     "gatsby-plugin-react-helmet": "^5.1.0",
+    "gatsby-plugin-sharp": "^4.1.0",
     "gatsby-plugin-sitemap": "^5.1.0",
     "gatsby-source-contentful": "^6.1.0",
     "react": "^17.0.1",
