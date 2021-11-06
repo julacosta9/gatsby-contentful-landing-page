@@ -4,7 +4,7 @@ import CtaButton from "../ui/CtaButton";
 const Hero = ({ data }) => {
   return (
     <section className="max-w-screen-content w-full mx-auto">
-      <div className="flex flex-col gap-5 sm:gap-8 text-white py-7">
+      <div className="flex flex-col gap-5 sm:gap-5 text-white pt-7 pb-9">
         <div className="font-bold text-sm sm:text-lg uppercase">
           {data.tagline}
         </div>

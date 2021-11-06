@@ -19,7 +19,7 @@ const Tile = ({ title, description, ctaText, ctaUrl, img, imgAlt }) => {
       </div>
       <img
         className="absolute transform transition duration-200 group-hover:scale-105"
-        style={{ height: "222px", top: "-75px", right: "-23px" }}
+        style={{ height: "222px", top: "-72px", right: "-26px" }}
         src={img}
         alt={imgAlt}
       />
