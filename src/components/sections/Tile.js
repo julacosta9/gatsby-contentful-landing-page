@@ -1,44 +1,30 @@
 import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { Link } from "gatsby";
 import arrow from "../../images/arrow-orange.svg";
-import chopper from "../../images/chopper@2x.png";
 
-const Tile = () => {
-  // const data = useStaticQuery(graphql`
-  //   query {
-  //     contentfulLandingPageHeroSection {
-  //       tagline
-  //       header
-  //       subheader
-  //       primaryCtaText
-  //       primaryCtaUrl
-  //       secondaryCtaText
-  //       secondaryTextUrl
-  //     }
-  //   }
-  // `);
-
+const Tile = ({ title, description, ctaText, ctaUrl, img, imgAlt }) => {
   return (
     <Link
-      to="#"
-      className="relative flex items-end bg-white rounded text-black w-full lg:w-1/3 p-5 hover:shadow-md transition ease-out duration-200 transform hover:-translate-y-2 group"
+      to={ctaUrl}
+      className="relative flex items-end bg-white rounded text-black w-full md:w-1/2 lg:w-1/3 md:mx-auto lg:mx-0 p-8 shadow-md lg:shadow-none hover:shadow-md transition ease-out duration-200 transform hover:-translate-y-2 group"
       style={{ height: "240px" }}
     >
       <div className="flex flex-col gap-4">
-        <div className="font-bold">Augmented Reality</div>
-        <div className="">An interactive experience like no other.</div>
-        <Link
+        <div className="font-bold text-lg">{title}</div>
+        <div style={{ fontSize: "14.4px" }}>{description}</div>
+        <div
           className="flex items-center font-bold text-bracketsOrange"
-          to="#learn-more"
+          style={{ fontSize: "14.4px" }}
         >
-          Learn more
-          <img className="h-3 w-3 mt-0.5 ml-2 " src={arrow} alt="" />
-        </Link>
+          {ctaText}
+          <img className="h-3 w-3 mt-0.5 ml-2" src={arrow} alt="" />
+        </div>
       </div>
       <img
-        className="absolute -top-12 -right-5 w-44 transform transition duration-200 group-hover:scale-105"
-        src={chopper}
-        alt="helicopter"
+        className="absolute transform transition duration-200 group-hover:scale-105"
+        style={{ height: "222px", top: "-75px", right: "-23px" }}
+        src={img}
+        alt={imgAlt}
       />
     </Link>
   );

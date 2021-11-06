@@ -28,7 +28,7 @@ const Header = () => {
     <header>
       <div className="bg-transparent">
         <div className="max-w-screen-content w-full mx-auto">
-          <div className="flex justify-between w-full bg-transparent py-4">
+          <div className="flex justify-between w-full bg-transparent py-9">
             <Link className="flex items-center" to="/">
               <img
                 src={data.contentfulMainNavigation.logo.file.url}
@@ -40,6 +40,7 @@ const Header = () => {
                 (link, index) => (
                   <Link
                     className="font-bold text-white transition hover:text-bracketsBlue"
+                    style={{ fontSize: "14.4px" }}
                     to={link.url}
                     key={index}
                   >

@@ -19,11 +19,14 @@ const Hero = () => {
 
   return (
     <section className="max-w-screen-content w-full mx-auto">
-      <div className="flex flex-col gap-8 text-white py-32">
+      <div className="flex flex-col gap-8 text-white py-7">
         <div className="font-bold text-lg uppercase">
           {data.contentfulLandingPageHeroSection.tagline}
         </div>
-        <div className="font-bold text-6xl max-w-lg">
+        <div
+          className="font-bold text-6xl max-w-lg"
+          style={{ fontSize: "56px", lineHeight: "68px" }}
+        >
           {data.contentfulLandingPageHeroSection.header}
         </div>
         <div className="text-lg">
