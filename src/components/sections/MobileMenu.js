@@ -2,6 +2,7 @@ import React, { Fragment } from "react";
 import { Link } from "gatsby";
 import { Popover, Transition } from "@headlessui/react";
 import { MenuIcon, XCircleIcon } from "@heroicons/react/solid";
+import arrow from "../../images/arrow.svg";
 
 const MobileMenu = ({ data }) => {
   return (
@@ -47,7 +48,7 @@ const MobileMenu = ({ data }) => {
                       )
                     )}
                   </div>
-                  <div className="p-4 transition bg-bracketsBlue hover:bg-bracketsBlue-dark">
+                  <div className="p-4 transition bg-bracketsBlue hover:bg-bracketsBlue-dark group">
                     <Link
                       to={data.contentfulMainNavigation.ctaUrl}
                       className="flow-root px-2 py-1 transition duration-150 ease-in-out rounded-md"
@@ -56,6 +57,11 @@ const MobileMenu = ({ data }) => {
                         <span className="text-base font-bold text-white">
                           {data.contentfulMainNavigation.ctaText}
                         </span>
+                        <img
+                          className="h-3 w-3 ml-2 transform transition group-hover:translate-x-0.5"
+                          src={arrow}
+                          alt=""
+                        />
                       </span>
                     </Link>
                   </div>

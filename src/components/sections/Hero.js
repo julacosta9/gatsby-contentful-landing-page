@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import CtaButton from "../ui/CtaButton";
 
 const Hero = () => {
@@ -29,7 +29,7 @@ const Hero = () => {
         <div className="text-lg">
           {data.contentfulLandingPageHeroSection.subheader}
         </div>
-        <div className="flex flex-col sm:flex-row pt-5 sm:pt-0 gap-4">
+        <div className="flex flex-col sm:flex-row w-max pt-5 sm:pt-0 gap-4">
           <CtaButton
             text={data.contentfulLandingPageHeroSection.primaryCtaText}
             url={data.contentfulLandingPageHeroSection.primaryCtaUrl}

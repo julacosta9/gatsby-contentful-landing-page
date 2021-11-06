@@ -9,8 +9,8 @@ const LandingPageHeroBackground = () => {
         className={`${styles.bg} absolute top-0 left-0 w-screen h-full bg-cover bg-no-repeat bg-right sm:bg-right lg:bg-center`}
         style={{
           backgroundImage: `url(${heroBackgroundImage})`,
-          zIndex: -1,
           maxHeight: "920px",
+          zIndex: -1,
         }}
       >
         <div

@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layouts/Layout";
 import Head from "../components/sections/Head";
@@ -45,7 +44,10 @@ const Home = () => {
 
   return (
     <Layout>
-      <Head title="Home" />
+      <Head
+        title="Home"
+        metaDescription="This mock landing page built with Gatsby and Contenful. Almost everything on this page can be edited in Contentful"
+      />
       <LandingPageHeroBackground />
       <Hero />
       <ThreeTilesAcross data={data} />
