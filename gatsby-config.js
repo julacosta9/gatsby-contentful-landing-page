@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://awesome-haibt-b798d9.netlify.app/",
     title: "Gatsby Contentful Landing Page",
     author: "Julian Acosta",
   },
