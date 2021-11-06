@@ -6,6 +6,11 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      fontSize: {
+        sm: "14.4px",
+        "4xl": ["2.25rem", "3.25rem"],
+        "6xl": ["56px", "68px"],
+      },
       colors: {
         bracketsBlue: {
           DEFAULT: "#2885F6",

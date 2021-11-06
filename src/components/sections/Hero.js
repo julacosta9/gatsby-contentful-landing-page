@@ -19,20 +19,17 @@ const Hero = () => {
 
   return (
     <section className="max-w-screen-content w-full mx-auto">
-      <div className="flex flex-col gap-8 text-white py-7">
-        <div className="font-bold text-lg uppercase">
+      <div className="flex flex-col gap-5 sm:gap-8 text-white py-7">
+        <div className="font-bold text-sm sm:text-lg uppercase">
           {data.contentfulLandingPageHeroSection.tagline}
         </div>
-        <div
-          className="font-bold text-6xl max-w-lg"
-          style={{ fontSize: "56px", lineHeight: "68px" }}
-        >
+        <div className="font-bold text-4xl sm:text-6xl max-w-lg">
           {data.contentfulLandingPageHeroSection.header}
         </div>
         <div className="text-lg">
           {data.contentfulLandingPageHeroSection.subheader}
         </div>
-        <div className="flex gap-4">
+        <div className="flex flex-col sm:flex-row pt-5 sm:pt-0 gap-4">
           <CtaButton
             text={data.contentfulLandingPageHeroSection.primaryCtaText}
             url={data.contentfulLandingPageHeroSection.primaryCtaUrl}

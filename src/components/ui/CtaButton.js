@@ -10,8 +10,8 @@ const CtaButton = ({ text, url, secondary }) => {
           secondary
             ? "bg-bracketsGray hover:bg-bracketsGray-dark"
             : "bg-bracketsBlue hover:bg-bracketsBlue-dark"
-        } flex items-center font-bold text-white px-5 rounded hover:shadow transition group`}
-        style={{ fontSize: "14.4px", height: "40px" }}
+        } flex items-center font-bold text-sm text-white px-5 rounded hover:shadow transition group`}
+        style={{ height: "40px" }}
       >
         {text}
         <img

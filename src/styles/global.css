@@ -14,4 +14,8 @@
     font-weight: 700;
     src: url(../fonts/Inter-Bold.ttf) format("truetype");
   }
+
+  html {
+    @apply bg-black;
+  }
 }

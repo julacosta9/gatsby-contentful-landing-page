@@ -29,7 +29,7 @@ const Header = () => {
       <div className="bg-transparent">
         <div className="max-w-screen-content w-full mx-auto">
           <div className="flex justify-between w-full bg-transparent py-9">
-            <Link className="flex items-center" to="/">
+            <Link className="flex items-center flex-shrink-0" to="/">
               <img
                 src={data.contentfulMainNavigation.logo.file.url}
                 alt={data.contentfulMainNavigation.logo.description}
@@ -39,8 +39,7 @@ const Header = () => {
               {data.contentfulMainNavigation.navigationLinks.map(
                 (link, index) => (
                   <Link
-                    className="font-bold text-white transition hover:text-bracketsBlue"
-                    style={{ fontSize: "14.4px" }}
+                    className="font-bold text-white text-sm transition hover:text-bracketsBlue"
                     to={link.url}
                     key={index}
                   >
